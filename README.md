@@ -1,8 +1,10 @@
 # NexposeCLI.rb
-Usage: certificationScan.rb [--username user] [--password secret] [--ip 10.0.1.1]
-Usage: certificationScan.rb [--username user] [--password secret] [--input-list /path/to/file.txt]
-Usage: certificationScan.rb [--username user] [--password secret] [--site-list]
-Usage: certificationScan.rb [--username user] [--password secret] [--engine-list]
+
+
+    Usage: certificationScan.rb [--username user] [--password secret] [--ip 10.0.1.1]
+    Usage: certificationScan.rb [--username user] [--password secret] [--input-list /path/to/file.txt]
+    Usage: certificationScan.rb [--username user] [--password secret] [--site-list]
+    Usage: certificationScan.rb [--username user] [--password secret] [--engine-list]
 
     -u, --username <username>        Nexpose user name.
     -p, --password <password>        Nexpose password.
