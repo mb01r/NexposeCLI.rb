@@ -275,26 +275,14 @@ def addCreds(username, password)
 	begin
          	$creds = SiteCredentials.new
          	$creds.service = Credential::Service::CIFS
-         	$creds.name = password
-         	$creds.user_name = password
+         	$creds.name = "site_creds_#{$time}"
+         	$creds.user_name = username
+		$creds.password = password
          	$creds.scope = "S"
+		$creds.enabled=true
          	$site.site_credentials << $creds
          	$site.save(@nsc)
-         	#$creds = Nexpose::SharedCredential.new("Certification credentials #{username}")
-         	#$creds.service = Credential::Service::CIFS
-         	#$creds.privilege_username = username
-         	#$creds.privilege_password = password
-         	#$creds.sites << $site.id
-         	#$creds.save(@nsc)
-		
-		# At this point the new creds id is -1 so we can't delete it. 
-		# We need to find the newly created credential in the connection
-		# and add that ID to the $creds variable.
-		@nsc.shared_credentials.each do |cred|
-			if cred.name == $creds.name then 
-				$creds.id = cred.id 
-			end
-		end	
+         			
 	rescue Exception => e
 		puts "[-] Credentials failed to load.".red
 	end		
